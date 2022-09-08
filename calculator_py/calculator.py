@@ -78,7 +78,7 @@ button_resta.grid(column=3, row=6)
 
 button_igual.grid(column=0, row=7,columnspan=3,sticky=(W,E))
 button_raiz_cuadrada.grid(column=3, row=7)
-
+#holi
 
 
 root.mainloop()

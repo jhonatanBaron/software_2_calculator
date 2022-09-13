@@ -103,5 +103,3 @@ for child in mainframe.winfo_children():
 
 #nn
 root.mainloop()
-#min15:12
-#https://www.youtube.com/watch?v=oyhLOjzoNJw

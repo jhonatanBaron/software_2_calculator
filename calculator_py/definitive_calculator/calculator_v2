@@ -1,6 +1,6 @@
 from tkinter import *
 from unittest import result
-
+i=0
 ventana = Tk()
 ventana.title("calculadora")
 
@@ -61,18 +61,21 @@ boton_igual.grid(row=5,column=2,padx=5,pady=5)
 
 
 #funciones
+
 def click_boton(valor):
-    e_texto.insert(0,valor)
+    global i
+    e_texto.insert(i,valor)
     i += 1
 
 def borrar():
     e_texto.delete(0,END)
-    i=0
+    i = 0
+
 def operacion():
     ecuacion = e_texto.get()
     resultado = eval(ecuacion)
     e_texto.delete(0,END)
     e_texto.insert(0,resultado)
-    i=0
-    
+    i = 0
+
 ventana.mainloop()

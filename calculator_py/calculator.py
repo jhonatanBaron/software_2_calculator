@@ -9,47 +9,64 @@ root = Tk()
 root.title("calculator")
 root.geometry("+500+80")
 
-mainframe = ttk.Frame(root)
+estilos = ttk.Style()
+estilos.configure ('mainframe.TFrame',background='#CECECE')
+mainframe = ttk.Frame(root,style="mainframe.TFrame")
 mainframe.grid(column=0,row=0)
 
+
+#estilos labels
+estilos_label_1 = ttk.Style()
+estilos_label_1.configure('Label1.TLabel', font="arial 15", anchor="E")
+
+estilos_label_2 = ttk.Style()
+estilos_label_2.configure('Label2.TLabel', font = "arial 15", anchor="E")
 #generando widget  col 0 fil0
 
 #entrada de texto
 entrada1= StringVar()
-label_entrada1 = ttk.Label(mainframe, textvariable = entrada1)
-label_entrada1.grid(column=0,row=0)
+label_entrada1 = ttk.Label(mainframe, textvariable =entrada1 , style="Label1.TLabel")
+label_entrada1.grid(column=0,row=0, columnspan=4, sticky=(W,E))
 
 #entrada de texto
 entrada2 = StringVar()
-label_entrada2 = ttk.Label(mainframe, textvariable = entrada2)
-label_entrada2.grid(column=0,row=1)
+label_entrada2 = ttk.Label(mainframe, textvariable = entrada2, style="Label2.TLabel")
+label_entrada2.grid(column=0,row=1,columnspan=4, sticky=(W,E))
 
+#estilos de los btones
+estilos_botones_numeros = ttk.Style()
+estilos_botones_numeros.configure('botones_numeros.TButton', font="arial 32", width=5, background="#CECECE", relief="flat")
+estilos_botones_borrar = ttk.Style()
+estilos_botones_borrar.configure('botones_borrar.TButton', font="arial 32", width=5, background="#CECECE", relief="flat")
+estilos_botones_borrar.map('botones_borrar.TButton', foreground =[('active','#FF0000')],background=[('active','#858585')])
+estilos_botones_restantes = ttk.Style()
+estilos_botones_restantes.configure('botones_restantes.TButton', font="arial 32", width=5, background="#CECECE", relief="flat")
 #creando botones
-button0 = ttk.Button(mainframe, text="0")
-button1 = ttk.Button(mainframe, text="1")
-button2 = ttk.Button(mainframe, text="2")
-button3 = ttk.Button(mainframe, text="3")
-button4 = ttk.Button(mainframe, text="4")
-button5 = ttk.Button(mainframe, text="5")
-button6 = ttk.Button(mainframe, text="6")
-button7 = ttk.Button(mainframe, text="7")
-button8 = ttk.Button(mainframe, text="8")
-button9 = ttk.Button(mainframe, text="9")
-button10 = ttk.Button(mainframe, text="10")
+button0 = ttk.Button(mainframe, text="0",style='botones_numeros.TButton')
+button1 = ttk.Button(mainframe, text="1",style='botones_numeros.TButton')
+button2 = ttk.Button(mainframe, text="2",style='botones_numeros.TButton')
+button3 = ttk.Button(mainframe, text="3",style='botones_numeros.TButton')
+button4 = ttk.Button(mainframe, text="4",style='botones_numeros.TButton')
+button5 = ttk.Button(mainframe, text="5",style='botones_numeros.TButton')
+button6 = ttk.Button(mainframe, text="6",style='botones_numeros.TButton')
+button7 = ttk.Button(mainframe, text="7",style='botones_numeros.TButton')
+button8 = ttk.Button(mainframe, text="8",style='botones_numeros.TButton')
+button9 = ttk.Button(mainframe, text="9",style='botones_numeros.TButton')
+button10 = ttk.Button(mainframe, text="10",style='botones_numeros.TButton')
 
 #botones operaciones
-button_borrar = ttk.Button(mainframe, text="<--")
-button_borrar_todo = ttk.Button(mainframe,text="C")
-button_parentesis1 = ttk.Button(mainframe,text="(")
-button_parentesis2 = ttk.Button(mainframe,text=")")
-button_punto = ttk.Button(mainframe,text=".")
-button_igual = ttk.Button(mainframe,text="=")
+button_borrar = ttk.Button(mainframe, text="<--",style='botones_borrar.TButton')
+button_borrar_todo = ttk.Button(mainframe,text="C",style='botones_borrar.TButton')
+button_parentesis1 = ttk.Button(mainframe,text="(",style='botones_restantes.TButton')
+button_parentesis2 = ttk.Button(mainframe,text=")",style='botones_restantes.TButton')
+button_punto = ttk.Button(mainframe,text=".",style='botones_restantes.TButton')
+button_igual = ttk.Button(mainframe,text="=",style='botones_restantes.TButton')
 
-button_division = ttk.Button(mainframe,text="/")
-button_multiplicacion = ttk.Button(mainframe,text="x")
-button_resta = ttk.Button(mainframe,text="-")
-button_suma = ttk.Button(mainframe,text="+")
-button_raiz_cuadrada = ttk.Button(mainframe,text="√")
+button_division = ttk.Button(mainframe,text="/",style='botones_restantes.TButton')
+button_multiplicacion = ttk.Button(mainframe,text="x",style='botones_restantes.TButton')
+button_resta = ttk.Button(mainframe,text="-",style='botones_restantes.TButton')
+button_suma = ttk.Button(mainframe,text="+",style='botones_restantes.TButton')
+button_raiz_cuadrada = ttk.Button(mainframe,text="√",style='botones_restantes.TButton')
 
 
 #colocando botones en pantalla

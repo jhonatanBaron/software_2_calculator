@@ -11,6 +11,7 @@ root.geometry("+500+80")
 
 estilos = ttk.Style()
 estilos.configure ('mainframe.TFrame',background='#CECECE')
+estilos.theme_use('clam')
 mainframe = ttk.Frame(root,style="mainframe.TFrame")
 mainframe.grid(column=0,row=0)
 
@@ -96,6 +97,8 @@ button_resta.grid(column=3, row=6)
 button_igual.grid(column=0, row=7,columnspan=3,sticky=(W,E))
 button_raiz_cuadrada.grid(column=3, row=7)
 
+for child in mainframe.winfo_children():
+    child.grid_configure(ipady=10 ,padx=1, pady=1)
 
 
 #nn
